@@ -1,0 +1,21 @@
+Port 22
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+
+PermitRootLogin no
+PasswordAuthentication no
+KbdInteractiveAuthentication no
+PubkeyAuthentication yes
+AuthorizedKeysFile /lab/client.pub
+AllowUsers lab
+
+# Needed so a remote forward (-R) can bind a port other than loopback.
+GatewayPorts clientspecified
+AllowTcpForwarding yes
+PermitOpen any
+X11Forwarding no
+PrintMotd no
+UseDNS no
+
+LogLevel VERBOSE
